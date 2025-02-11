@@ -2,10 +2,15 @@ package com.ems.EmployeeManagementSystem.model;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
-import org.hibernate.mapping.Set;
+import lombok.Setter;
+
+import java.util.Set;
 
 @Entity
+@Getter
+@Setter
 @AllArgsConstructor
 @NoArgsConstructor
 public class Employee {

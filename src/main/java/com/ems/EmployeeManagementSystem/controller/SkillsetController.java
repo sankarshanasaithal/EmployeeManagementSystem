@@ -15,14 +15,19 @@ public class SkillsetController {
     @Autowired
     private SkillsetService skillService;
 
-    @PostMapping("/add")
-    public ResponseEntity<Skillset> addSkill(@RequestBody Skillset skill) {
-        return new ResponseEntity<>(skillService.addSkill(skill), HttpStatus.CREATED);
-    }
-
     @GetMapping("/{id}")
     public ResponseEntity<Skillset> getSkill(@PathVariable Long id) {
         return ResponseEntity.ok(skillService.getSkillById(id));
+    }
+
+    @GetMapping("/all")
+    public ResponseEntity<List<Skillset>> getAllSkills() {
+        return ResponseEntity.ok(skillService.getAllSkills());
+    }
+
+    @PostMapping("/add")
+    public ResponseEntity<Skillset> addSkill(@RequestBody Skillset skill) {
+        return new ResponseEntity<>(skillService.addSkill(skill), HttpStatus.CREATED);
     }
 
     @PutMapping("/update/{id}")
@@ -36,8 +41,4 @@ public class SkillsetController {
         return ResponseEntity.ok("Skill deleted successfully");
     }
 
-    @GetMapping("/all")
-    public ResponseEntity<List<Skillset>> getAllSkills() {
-        return ResponseEntity.ok(skillService.getAllSkills());
-    }
 }
