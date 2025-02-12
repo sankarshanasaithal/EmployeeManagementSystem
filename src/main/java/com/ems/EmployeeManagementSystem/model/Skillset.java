@@ -19,4 +19,5 @@ public class Skillset {
     private Long id;
 
     private String name;
+
 }

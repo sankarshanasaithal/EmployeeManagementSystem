@@ -1,0 +1,1 @@
+ALTER TABLE Employee ADD COLUMN join_date DATE;

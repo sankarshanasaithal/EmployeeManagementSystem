@@ -37,7 +37,7 @@ public class EmployeeService {
         return getEmployeeById(id);
     }
 
-    @Cacheable(value = "employees", key = "#id")
+//    @Cacheable(value = "employees", key = "#id")
     public Employee getEmployeeById(Long id) {
         return employeeRepo.findById(id)
                 .orElseThrow(() -> new CustomException("Employee not found with ID: " + id));
@@ -121,7 +121,6 @@ public class EmployeeService {
                 .orElseThrow(() -> new CustomException("Employee not found with ID: " + id));
     }
 
-    // Edit Full Employee Profile
     @CachePut(value = "employees", key = "#id")
     public Employee editEmployeeProfile(Long id, Employee updatedProfile) {
         Employee existing = viewEmployeeProfile(id);
@@ -133,7 +132,6 @@ public class EmployeeService {
         existing.setProjects(updatedProfile.getProjects());
         return employeeRepo.save(existing);
     }
-
 
     public List<Employee> getAllEmployees() {
         return employeeRepo.findAll();
