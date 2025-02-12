@@ -1,0 +1,6 @@
+INSERT INTO Employee_Skillset (employee_id, skillset_id) VALUES
+(1, 1),
+(1, 2),
+(2, 3),
+(3, 4),
+(3, 5);

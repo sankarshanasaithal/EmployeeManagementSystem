@@ -1,0 +1,2 @@
+ALTER TABLE Project
+ADD COLUMN status VARCHAR(50) DEFAULT 'Active';
